@@ -1,4 +1,4 @@
-package com.ezaldivar;
+package com.example;
 
 public class Main {
 
