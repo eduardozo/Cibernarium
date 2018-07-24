@@ -22,6 +22,14 @@ public class Main {
         double result5 = (double) intValue1 % intValue2;
         System.out.println("Remainder: " + result5);
 
+
+        //Using Math
+        double doubleValue = -3.99999;
+        long rounded = Math.round(doubleValue);
+        System.out.println("Rounded: " + rounded);
+
+        double absValue = Math.abs(doubleValue);
+        System.out.println("Absolute: " + absValue);
     }
 
 }
