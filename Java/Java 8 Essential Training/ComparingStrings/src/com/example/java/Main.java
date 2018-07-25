@@ -7,6 +7,12 @@ public class Main {
         String str1 = "Hello";
         String str2 = "Hello";
 
+        if (str1 == str2){
+            System.out.println("They match!");
+        } else {
+            System.out.println("They don't match!");
+        }
+
     }
 
 }
