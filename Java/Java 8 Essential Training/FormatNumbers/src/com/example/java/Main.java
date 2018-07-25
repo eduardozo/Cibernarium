@@ -1,10 +1,16 @@
 package com.example.java;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        Locale locale = new Locale("en", "US");
         double doubleValue = 1_234_567.89;
+        NumberFormat numF = NumberFormat.getNumberInstance(locale);
+        System.out.println("Number: " + numF.format(doubleValue));
 
     }
 
