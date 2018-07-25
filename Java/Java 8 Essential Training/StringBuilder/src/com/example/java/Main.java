@@ -1,5 +1,7 @@
 package com.example.java;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +16,11 @@ public class Main {
                 .append("world")
                 .append("!");
         System.out.println(sb);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a value: ");
+        String input = scanner.nextLine();
+        System.out.println(input);
     }
 
 }
