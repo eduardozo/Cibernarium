@@ -9,7 +9,11 @@ public class Main {
         String str3 = str1 + ", " + str2 + "!";
         System.out.println(str3);
 
-
+        StringBuilder sb = new StringBuilder("Hello")
+                .append(", ")
+                .append("world")
+                .append("!");
+        System.out.println(sb);
     }
 
 }
