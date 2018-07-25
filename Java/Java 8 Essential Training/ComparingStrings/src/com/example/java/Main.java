@@ -20,7 +20,15 @@ public class Main {
             System.out.println("They don't match!");
         }
 
-
+        String part1 = "Hello ";
+        String part2 = "WORLD";
+        String str4 = part1 + part2;
+        String str5 = "Hello World";
+        if (str4.equalsIgnoreCase(str5)){
+            System.out.println("They match!");
+        } else {
+            System.out.println("They don't match!");
+        }
     }
 
 }
