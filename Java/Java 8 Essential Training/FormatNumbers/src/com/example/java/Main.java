@@ -9,8 +9,15 @@ public class Main {
 
         Locale locale = new Locale("en", "US");
         double doubleValue = 1_234_567.89;
+
         NumberFormat numF = NumberFormat.getNumberInstance(locale);
         System.out.println("Number: " + numF.format(doubleValue));
+
+        NumberFormat curF = NumberFormat.getCurrencyInstance(locale);
+        System.out.println("Currency: " + curF.format(doubleValue));
+
+        NumberFormat intF = NumberFormat.getIntegerInstance(locale);
+        System.out.println("Integer: " + intF.format(doubleValue));
 
     }
 
