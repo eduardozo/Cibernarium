@@ -13,6 +13,14 @@ public class Main {
             System.out.println("They don't match!");
         }
 
+        String str3 = "hello";
+        if (str1 == str3){
+            System.out.println("They match!");
+        } else {
+            System.out.println("They don't match!");
+        }
+
+
     }
 
 }
