@@ -8,6 +8,10 @@ public class Main {
         char[] chars = welcome.toCharArray();
 
         try {
+            if (chars.length < 10){
+                throw (new Exception("My custom message"));
+            }
+
             char lastChar = chars[chars.length - 1];
             System.out.println(lastChar);
 
@@ -17,6 +21,8 @@ public class Main {
             System.out.println("Array index problem.");
         } catch (StringIndexOutOfBoundsException e) {
             System.out.println("String index problem.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
