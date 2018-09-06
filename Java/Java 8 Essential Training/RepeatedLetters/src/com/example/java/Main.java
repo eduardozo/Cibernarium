@@ -16,7 +16,7 @@ public class Main {
         //----------------[ Fase 2 ]----------------
         System.out.println("--- Fase #2 ---");
         List<String> consonantsAndVowels = new ArrayList<>();
-        List<Character> list = new ArrayList<>(name.length - 1);
+        List<Character> list = new ArrayList<>();
         for (Character letter : name) {
             list.add(letter);
             if (isVowel(letter)) {
@@ -24,7 +24,8 @@ public class Main {
             } else if (isConsonant(letter)) {
                 consonantsAndVowels.add("Consonant");
             } else {
-                System.err.println("People's name not contains numbers: " + letter);
+                System.out.println("People's name just contains Vowels and Consonants");
+                System.err.println(letter);
             }
         }
         System.out.println(consonantsAndVowels);
@@ -34,7 +35,16 @@ public class Main {
         //----------------[ Fase 3 ]----------------
         System.out.println("--- Fase #3 ---");
         Map<Character, Integer> letterList = new HashMap<>();
+        for (Character letter: name) {
+            letterList.put(letter, 0);
+        }
+
         for (Character letter : name) {
+            letterList.merge(letter, 1, Integer::sum);
+            //letterList.replaceAll((key, value) -> (letter.equals(key)) ? value += 1 : 0);
+        }
+
+        /*for (Character letter : name) {
             int count = 0;
             for (int i = 0; i < name.length; i++) {
                 if (letter.equals(name[i])) {
@@ -42,7 +52,7 @@ public class Main {
                 }
             }
             letterList.put(letter, count);
-        }
+        }*/
         System.out.println(letterList);
         System.out.println();
 
