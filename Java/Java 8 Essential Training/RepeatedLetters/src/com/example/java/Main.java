@@ -40,9 +40,14 @@ public class Main {
         }
 
         for (Character letter : name) {
-            letterList.merge(letter, 1, Integer::sum);
-            //letterList.replaceAll((key, value) -> (letter.equals(key)) ? value += 1 : 0);
+            letterList.computeIfPresent(letter, (k, v) -> v + 1);
         }
+
+        /*for (Character letter : name) {
+            letterList.merge(letter, 1, Integer::sum);
+        }*/
+
+
 
         /*for (Character letter : name) {
             int count = 0;
