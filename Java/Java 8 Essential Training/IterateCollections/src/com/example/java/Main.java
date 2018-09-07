@@ -27,6 +27,10 @@ public class Main {
         }
         System.out.println();
 
-
+        System.out.println("ArrayList ForEach");
+        for (String value : list) {
+            System.out.println(value);
+        }
+        System.out.println();
     }
 }
