@@ -39,9 +39,19 @@ public class Main {
             letterList.put(letter, 0);
         }
 
-        for (Character letter : name) {
+        //ForEach Lambda
+        letterList.forEach((k, v) -> {
+            for (Character letter: name) {
+                if (k.equals(letter)) {
+                    v++;
+                }
+            }
+            letterList.put(k, v);
+        });
+
+        /*for (Character letter : name) {
             letterList.computeIfPresent(letter, (k, v) -> v + 1);
-        }
+        }*/
 
         /*for (Character letter : name) {
             letterList.merge(letter, 1, Integer::sum);
