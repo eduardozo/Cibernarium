@@ -10,7 +10,7 @@ public class Calculator {
         calc.calculate();
     }
 
-    protected void calculate() {
+    private void calculate() {
         InputHelper helper = new InputHelper();
         String s1 = helper.getInput("1. Enter a numeric value: ");
         String s2 = helper.getInput("2. Enter a numeric value: ");
