@@ -1,8 +1,6 @@
 package com.example.java;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -33,8 +31,17 @@ public class Main {
         }
         System.out.println();
 
-        System.out.println("ArrayList ForEach + Lambda");
+        System.out.println("ArrayList ForEach + Lambda. Java 8 method reference");
         list.forEach(System.out::println);
+        System.out.println();
+
+        //--------[ Map - HashMap ]--------
+        System.out.println("unordered data: ");
+        Map<String, String> map = new HashMap<>();
+        map.put("California", "Sacramento");
+        map.put("Oregon", "Salem");
+        map.put("Washington", "Olympia");
+        System.out.println(map);
         System.out.println();
     }
 }
