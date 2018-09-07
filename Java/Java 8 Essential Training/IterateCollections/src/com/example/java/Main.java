@@ -19,6 +19,14 @@ public class Main {
         System.out.println(list);
         System.out.println();
 
+        System.out.println("ArrayList Iterator:");
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String value = iterator.next();
+            System.out.println(value);
+        }
+        System.out.println();
+
 
     }
 }
