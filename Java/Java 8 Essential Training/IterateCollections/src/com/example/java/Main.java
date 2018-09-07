@@ -52,5 +52,14 @@ public class Main {
             System.out.println("The capitol of " + key + " is " + map.get(key));
         }
         System.out.println();
+
+        System.out.println("HashMap ForEach");
+        for (String key : keys) {
+            System.out.println("The capitol of " + key + " is " + map.get(key));
+        }
+        System.out.println();
+
+
+
     }
 }
