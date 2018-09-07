@@ -32,5 +32,9 @@ public class Main {
             System.out.println(value);
         }
         System.out.println();
+
+        System.out.println("ArrayList ForEach + Lambda");
+        list.forEach(System.out::println);
+        System.out.println();
     }
 }
