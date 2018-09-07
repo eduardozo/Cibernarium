@@ -43,5 +43,14 @@ public class Main {
         map.put("Washington", "Olympia");
         System.out.println(map);
         System.out.println();
+
+        System.out.println("HashMap Iterator");
+        Set<String> keys = map.keySet();
+        Iterator<String> iterator1 = keys.iterator();
+        while (iterator1.hasNext()) {
+            String key = iterator1.next();
+            System.out.println("The capitol of " + key + " is " + map.get(key));
+        }
+        System.out.println();
     }
 }
