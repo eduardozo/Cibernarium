@@ -59,7 +59,8 @@ public class Main {
         }
         System.out.println();
 
-
+        System.out.println("Map HashMap ForEach + Lambda. Java 8 method reference");
+        map.forEach((k, v) -> System.out.println("The capitol of " + k + " is " + v));
 
     }
 }
