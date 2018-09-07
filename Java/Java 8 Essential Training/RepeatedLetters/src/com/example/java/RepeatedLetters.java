@@ -1,15 +1,23 @@
 package com.example.java;
 
+import com.example.java.utilities.LetterHelper;
+
 import java.util.*;
 
-public class Main {
+public class RepeatedLetters {
 
     public static void main(String[] args) {
 
+        RepeatedLetters repeatedLetters = new RepeatedLetters();
+        repeatedLetters.showConsole();
+    }
+
+    private void showConsole() {
+        LetterHelper helper = new LetterHelper();
         //----------------[ Fase 1 ]----------------
         System.out.println("--- Fase #1 ---");
-        char[] name = getInput("Enter your name:");
-        printCharToString(name);
+        char[] name = helper.getInput("Enter your name:");
+        helper.printCharToString(name);
         System.out.println();
         //System.out.println(Arrays.toString(name));
 
@@ -19,9 +27,9 @@ public class Main {
         List<Character> list = new ArrayList<>();
         for (Character letter : name) {
             list.add(letter);
-            if (isVowel(letter)) {
+            if (helper.isVowel(letter)) {
                 consonantsAndVowels.add("Vowel");
-            } else if (isConsonant(letter)) {
+            } else if (helper.isConsonant(letter)) {
                 consonantsAndVowels.add("Consonant");
             } else {
                 System.out.println("People's name just contains Vowels and Consonants");
@@ -35,13 +43,13 @@ public class Main {
         //----------------[ Fase 3 ]----------------
         System.out.println("--- Fase #3 ---");
         Map<Character, Integer> letterList = new HashMap<>();
-        for (Character letter: name) {
+        for (Character letter : name) {
             letterList.put(letter, 0);
         }
 
         //ForEach Lambda
         letterList.forEach((k, v) -> {
-            for (Character letter: name) {
+            for (Character letter : name) {
                 if (k.equals(letter)) {
                     v++;
                 }
@@ -73,7 +81,7 @@ public class Main {
 
         //----------------[ Fase 4 ]----------------
         System.out.println("--- Fase #4 ---");
-        char[] lastname = getInput("Enter your lastname: ");
+        char[] lastname = helper.getInput("Enter your lastname: ");
         List<String> fullName = new ArrayList<>();
 
         for (Character letter : name) {
@@ -88,31 +96,4 @@ public class Main {
         System.out.println();
     }
 
-
-    private static boolean isConsonant(Character letter) {
-        String consonants = "bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ";
-        return consonants.contains(letter.toString());
-    }
-
-    private static boolean isVowel(Character letter) {
-        String vowels = "aeiouAEIOU";
-        return vowels.contains(letter.toString());
-    }
-
-    private static void printCharToString(char[] chars) {
-        String s = "[";
-        for (int i = 0; i < chars.length; i++) {
-            s += chars[i];
-            s += (i != (chars.length - 1)) ? ", " : "";
-        }
-        s += "]";
-        System.out.println(s);
-    }
-
-    private static char[] getInput(String prompt) {
-        System.out.println(prompt);
-        Scanner sc = new Scanner(System.in);
-        String string = sc.nextLine();
-        return string.toCharArray();
-    }
 }
