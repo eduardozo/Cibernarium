@@ -1,5 +1,7 @@
 package com.example.java;
 
+import com.example.java.model.Olive;
+
 import java.util.ArrayList;
 import java.util.List;
 
