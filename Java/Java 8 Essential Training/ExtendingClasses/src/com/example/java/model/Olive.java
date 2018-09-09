@@ -2,9 +2,9 @@ package com.example.java.model;
 
 public class Olive {
 
-    private OliveName name = OliveName.KALAMATA;
-    private OliveColor color = OliveColor.PURPLE;
-    private int oil = 3;
+    private OliveName name;
+    private OliveColor color;
+    private int oil;
 
     public Olive(OliveName name, OliveColor color, int oil) {
         this.name = name;
@@ -29,11 +29,16 @@ public class Olive {
     }
 
     public int crush() {
-        System.out.println("Ouch!");
+        System.out.println(name + ": " + oil + " units");
         return oil;
     }
 
     public void setOil(int oil) {
         this.oil = oil;
+    }
+
+    @Override
+    public String toString() {
+        return name.toString();
     }
 }
