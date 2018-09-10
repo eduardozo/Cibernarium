@@ -1,6 +1,6 @@
 package com.example.java.model;
 
-public class Olive {
+public abstract class Olive {
 
     private OliveName name;
     private OliveColor color;
@@ -29,13 +29,15 @@ public class Olive {
     }
 
     public int crush() {
-        System.out.println(name + ": " + oil + " units");
+        System.out.println(name + ", From " + getOrigin() + ": " + oil + " units");
         return oil;
     }
 
     public void setOil(int oil) {
         this.oil = oil;
     }
+
+    public abstract String getOrigin();
 
     @Override
     public String toString() {
