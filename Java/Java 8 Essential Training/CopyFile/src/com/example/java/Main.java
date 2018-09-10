@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         String sourceFile = "files/loremipsum.txt";
-        String targetFile = "file/target.txt";
+        String targetFile = "files/target.txt";
 
         try (
                 FileReader fileReader = new FileReader(sourceFile);
@@ -25,6 +25,7 @@ public class Main {
                     fileWriter.write(line + "\n");
                 }
             }
+            System.out.println("File copied!");
 
         } catch (Exception e) {
             e.printStackTrace();
