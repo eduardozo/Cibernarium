@@ -6,7 +6,7 @@ public class Olive {
     private OliveColor color;
     private int oil;
 
-    public Olive(OliveName name, OliveColor color, int oil) {
+    Olive(OliveName name, OliveColor color, int oil) {
         this.name = name;
         this.color = color;
         this.oil = oil;
