@@ -23,5 +23,17 @@ public class Main {
         press.setOil(30);
         int totalOil = press.getOil(olives);
         System.out.println("Total Olive Oil: " + totalOil);
+
+        /*Press p2 = new Press() {
+            @Override
+            public int getOil(List<Olive> olives) {
+                return 0;
+            }
+
+            @Override
+            public void setOil(int oil) {
+
+            }
+        };*/
     }
 }
