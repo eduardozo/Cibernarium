@@ -4,7 +4,7 @@ import com.example.java.model.Olive;
 
 import java.util.List;
 
-public class OlivePress {
+public class OlivePress implements Press {
 
     public int getOil(List<Olive> olives) {
 
