@@ -2,17 +2,17 @@ package com.example.java.model;
 
 public class Propellant {
 
-    private int Power;
+    private int power;
 
     public Propellant(int power) {
-        Power = power;
+        this.power = power;
     }
 
     public int getPower() {
-        return Power;
+        return power;
     }
 
     public void setPower(int power) {
-        Power = power;
+        this.power = power;
     }
 }

@@ -1,26 +1,33 @@
 package com.example.java.model;
 
+import com.example.java.utilities.InvalidParamException;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rocket {
 
     private String code;
-    private List<Propellant> propellants;
+    private List<Propellant> propellants = new ArrayList<>();
 
-    public Rocket(String code) {
+    public Rocket(String code) throws InvalidParamException {
+        checkValidCode(code);
         this.code = code;
+
     }
 
-    public Rocket(String code, List<Propellant> propellants) {
-        this.code = code;
-        this.propellants = propellants;
+    public void addPropellant(int power) {
+        if (power >= 1) {
+            this.propellants.add(new Propellant(power));
+        }
     }
 
     public String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(String code) throws InvalidParamException {
+        checkValidCode(code);
         this.code = code;
     }
 
@@ -31,4 +38,10 @@ public class Rocket {
     public void setPropellants(List<Propellant> propellants) {
         this.propellants = propellants;
     }
+
+    private void checkValidCode(String code) throws InvalidParamException {
+        if (code.equals("") || code.length() < 2)
+            throw new InvalidParamException();
+    }
+
 }
