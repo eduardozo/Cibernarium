@@ -52,16 +52,9 @@ public class Rocket {
     }
 
     public void slowDown() {
-        int max = 0;
         for (Propellant p : propellants) {
-            if (p.getCurrentPower() > max) {
-                max = p.getCurrentPower();
-            }
-        }
-        for (Propellant p : propellants) {
-            if (p.getCurrentPower() == max) {
-                p.slowDown();
-            }
+            p.slowDown();
+
         }
     }
 

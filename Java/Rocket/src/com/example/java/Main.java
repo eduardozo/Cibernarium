@@ -9,9 +9,9 @@ public class Main {
     public static void main(String[] args) throws InvalidParamException {
 
         Rocket rocket1 = new Rocket("32WESSDS");
-        rocket1.addPropellant(10);
+        rocket1.addPropellant(15);
         rocket1.addPropellant(30);
-        rocket1.addPropellant(40);
+        rocket1.addPropellant(42);
 
         System.out.println("Rocket 1 with code: " + rocket1.getCode() + " has " + rocket1.getPropellants().size() + " propellants.");
 
@@ -50,10 +50,14 @@ public class Main {
         rocket1.speedUp();
         rocket1.speedUp();
         rocket1.speedUp();
+        rocket1.speedUp();
+
+
         rocket1.slowDown();
         rocket1.slowDown();
         rocket1.slowDown();
-        rocket1.slowDown();
+
+
 
         System.out.println();
 

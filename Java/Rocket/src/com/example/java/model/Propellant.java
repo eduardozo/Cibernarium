@@ -1,5 +1,7 @@
 package com.example.java.model;
 
+import com.example.java.utilities.InvalidParamException;
+
 public class Propellant {
 
     private int power;
@@ -11,13 +13,21 @@ public class Propellant {
 
     public void speedUp() {
         if (currentPower < power) {
-            this.currentPower += 10;
+            if ((currentPower + 10) > power) {
+                this.currentPower = power;
+            } else {
+                this.currentPower += 10;
+            }
         }
     }
 
     public void slowDown() {
         if (currentPower > 0) {
-            this.currentPower -= 10;
+            if ((currentPower - 10) <= 0) {
+                currentPower = 0;
+            } else {
+                this.currentPower -= 10;
+            }
         }
     }
 
