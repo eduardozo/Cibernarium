@@ -11,7 +11,7 @@ public class Main {
         Rocket rocket1 = new Rocket("32WESSDS");
         rocket1.addPropellant(10);
         rocket1.addPropellant(30);
-        rocket1.addPropellant(80);
+        rocket1.addPropellant(40);
 
         System.out.println("Rocket 1 with code: " + rocket1.getCode() + " has " + rocket1.getPropellants().size() + " propellants.");
 
@@ -27,16 +27,39 @@ public class Main {
         System.out.println("Rocket 2 with code: " + rocket2.getCode() + " has " + rocket2.getPropellants().size() + " propellants.");
         System.out.println();
 
-        System.out.print("Rocket: " + rocket1.getCode() + ", Potencia: ");
+        System.out.print("Rocket: " + rocket1.getCode() + ", Power: ");
         for (Propellant p : rocket1.getPropellants()) {
             System.out.print(p.getPower() + ", ");
         }
 
         System.out.println();
 
-        System.out.print("Rocket: " + rocket2.getCode() + ", Potencia: ");
+        System.out.print("Rocket: " + rocket2.getCode() + ", Power: ");
         for (Propellant p : rocket2.getPropellants()) {
             System.out.print(p.getPower() + ", ");
+        }
+
+        System.out.println();
+        System.out.println();
+
+        System.out.print("Rocket: " + rocket1.getCode() + ", Initial Power: ");
+        for (Propellant p : rocket1.getPropellants()) {
+            System.out.print(p.getCurrentPower() + ", ");
+        }
+        rocket1.speedUp();
+        rocket1.speedUp();
+        rocket1.speedUp();
+        rocket1.speedUp();
+        rocket1.slowDown();
+        rocket1.slowDown();
+        rocket1.slowDown();
+        rocket1.slowDown();
+
+        System.out.println();
+
+        System.out.print("Rocket: " + rocket1.getCode() + ", increased Power: ");
+        for (Propellant p : rocket1.getPropellants()) {
+            System.out.print(p.getCurrentPower() + ", ");
         }
 
     }

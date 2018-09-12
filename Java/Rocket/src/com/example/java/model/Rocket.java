@@ -3,6 +3,7 @@ package com.example.java.model;
 import com.example.java.utilities.InvalidParamException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Rocket {
@@ -42,6 +43,26 @@ public class Rocket {
     private void checkValidCode(String code) throws InvalidParamException {
         if (code.equals("") || code.length() < 2)
             throw new InvalidParamException();
+    }
+
+    public void speedUp() {
+        for (Propellant p : propellants) {
+            p.speedUp();
+        }
+    }
+
+    public void slowDown() {
+        int max = 0;
+        for (Propellant p : propellants) {
+            if (p.getCurrentPower() > max) {
+                max = p.getCurrentPower();
+            }
+        }
+        for (Propellant p : propellants) {
+            if (p.getCurrentPower() == max) {
+                p.slowDown();
+            }
+        }
     }
 
 }
