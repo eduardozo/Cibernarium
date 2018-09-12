@@ -1,7 +1,5 @@
 package com.example.java.model;
 
-import com.example.java.utilities.InvalidParamException;
-
 public class Propellant {
 
     private int power;

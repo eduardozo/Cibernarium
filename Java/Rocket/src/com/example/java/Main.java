@@ -38,33 +38,40 @@ public class Main {
         for (Propellant p : rocket2.getPropellants()) {
             System.out.print(p.getPower() + ", ");
         }
+        System.out.println("\n\nVelocity r1: " + rocket1.getVelocity());
+        System.out.println("Velocity r2: " + rocket2.getVelocity());
 
-        System.out.println();
-        System.out.println();
-
-        System.out.print("Rocket: " + rocket1.getCode() + ", Initial Power: ");
-        for (Propellant p : rocket1.getPropellants()) {
-            System.out.print(p.getCurrentPower() + ", ");
+        System.out.println("\nSpeed up 3 times...\n");
+        for (int i = 0; i < 3; i++) {
+            rocket1.speedUp();
+            rocket2.speedUp();
         }
-        rocket1.speedUp();
-        rocket1.speedUp();
-        rocket1.speedUp();
-        rocket1.speedUp();
-        rocket1.speedUp();
+
+        System.out.println("Velocity r1: " + rocket1.getVelocity());
+        System.out.println("Velocity r2: " + rocket2.getVelocity());
 
 
-        rocket1.slowDown();
-        rocket1.slowDown();
-        rocket1.slowDown();
-
-
-
-        System.out.println();
-
-        System.out.print("Rocket: " + rocket1.getCode() + ", increased Power: ");
-        for (Propellant p : rocket1.getPropellants()) {
-            System.out.print(p.getCurrentPower() + ", ");
+        System.out.println("\nSlow down 5 times for r1...");
+        for (int i = 0; i < 5; i++) {
+            rocket1.slowDown();
         }
+
+        System.out.println("Speed up 7 times for r2...\n");
+        for (int i = 0; i < 7; i++) {
+            rocket2.speedUp();
+        }
+
+        System.out.println("Velocity r1: " + rocket1.getVelocity());
+        System.out.println("Velocity r2: " + rocket2.getVelocity());
+
+        System.out.println("\nSpeed up r1 and r2 15 times...\n");
+        for (int i = 0; i < 15; i++) {
+            rocket1.speedUp();
+            rocket2.speedUp();
+        }
+
+        System.out.println("Velocity r1: " + rocket1.getVelocity());
+        System.out.println("Velocity r2: " + rocket2.getVelocity());
 
     }
 }

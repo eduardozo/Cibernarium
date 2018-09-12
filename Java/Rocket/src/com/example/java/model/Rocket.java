@@ -3,7 +3,6 @@ package com.example.java.model;
 import com.example.java.utilities.InvalidParamException;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Rocket {
@@ -58,4 +57,11 @@ public class Rocket {
         }
     }
 
+    public int getVelocity() {
+        int velocity = 0;
+        for (Propellant p : propellants) {
+            velocity += p.getCurrentPower();
+        }
+        return velocity;
+    }
 }
