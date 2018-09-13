@@ -22,4 +22,14 @@ public class PaymentFactory {
             }
         };
     }
+
+    public static IPaymentRate createPaymentRateManager() {
+        return new IPaymentRate() {
+            @Override
+            public double pay(double salaryPerMonth) {
+                return salaryPerMonth * 1.5;
+            }
+        };
+        //todo
+    }
 }
