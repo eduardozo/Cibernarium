@@ -30,4 +30,8 @@ public abstract class AbsStaffMember {
     public String getName() {
         return name;
     }
+
+    public double getTotalPaid() {
+        return totalPaid;
+    }
 }

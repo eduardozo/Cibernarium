@@ -26,21 +26,20 @@ public class JobsController {
     public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception {
         Employee maganer = new Employee(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateManager());
         repository.addMember(maganer);
-        // TODO Auto-generated method stub
-
     }
 
 
     public void payAllEmployeers() {
-        // TODO Auto-generated method stub
+        for (AbsStaffMember employee : repository.getAllMembers()) {
+            employee.pay();
+        }
 
     }
 
     public String getAllEmployees() {
-        // TODO Auto-generated method stub
         String employees = "\n";
         for (AbsStaffMember employee : repository.getAllMembers()) {
-            employees += employee.getName() + "\n";
+            employees += employee.getName() + " Salary: " + employee.getTotalPaid() + "\n";
         }
         return employees;
     }
@@ -48,8 +47,6 @@ public class JobsController {
     public void createVolunteer(String name, String address, String phone) throws Exception {
         Volunteer volunteer = new Volunteer(name, address, phone);
         repository.addMember(volunteer);
-        // TODO Auto-generated method stub
-
     }
 
 
