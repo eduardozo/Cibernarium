@@ -15,7 +15,9 @@ public class Main {
         controller.addFlower("Red", 4);
         controller.addDecoration(Material.PLASTIC, 7);
         controller.addDecoration(Material.WOOD, 12);
-        controller.getStock();
+
+        String stock = controller.getStock();
+        System.out.println(stock);
 
     }
 }

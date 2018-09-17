@@ -6,9 +6,6 @@ import java.util.List;
 public class Florist {
 
     private String name;
-    private List<Tree> trees = new ArrayList<>();
-    private List<Flower> flowers = new ArrayList<>();
-    private List<Decoration> decorations = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
 
     public Florist(String name) throws Exception {
@@ -29,14 +26,32 @@ public class Florist {
     }
 
     public List<Tree> getTrees() {
+        List<Tree> trees = new ArrayList<>();
+        for (Product p : products) {
+            if (p instanceof Tree) {
+                trees.add((Tree) p);
+            }
+        }
         return trees;
     }
 
     public List<Flower> getFlowers() {
+        List<Flower> flowers = new ArrayList<>();
+        for (Product p : products) {
+            if (p instanceof Flower) {
+                flowers.add((Flower) p);
+            }
+        }
         return flowers;
     }
 
     public List<Decoration> getDecorations() {
+        List<Decoration> decorations = new ArrayList<>();
+        for (Product p : products) {
+            if (p instanceof Decoration) {
+                decorations.add((Decoration) p);
+            }
+        }
         return decorations;
     }
 

@@ -16,7 +16,7 @@ public class Tree extends Product {
     }
 
     @Override
-    public void settPrice(double price) {
+    public void setPrice(double price) {
         if (price > 0) {
             this.price = price;
         }

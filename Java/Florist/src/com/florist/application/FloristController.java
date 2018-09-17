@@ -11,22 +11,22 @@ public class FloristController {
 
 
     public void createFlorist(String name) throws Exception {
-        this.florist = new Florist(name);
+        florist = new Florist(name);
     }
 
     public void addTree(int height, double price) {
-        this.florist.addTree(height, price);
+        florist.addTree(height, price);
     }
 
     public void addFlower(String color, double price) {
-        this.florist.addFlower(color, price);
+        florist.addFlower(color, price);
     }
 
     public void addDecoration(Material material, double price) {
-        this.florist.addDecoration(material, price);
+        florist.addDecoration(material, price);
     }
 
-    public void getStock() {
+    public String getStock() {
         String stock = "-[Stock] => [" + florist.getName() + "]-\n";
         for (Tree t : florist.getTrees()) {
             stock += "Tree - Height: " + t.getHeight() + ", Price: " + t.getPrice() + "\n";
@@ -44,6 +44,6 @@ public class FloristController {
             stock += "Decoration - Material: " + d.getMaterial() + ", Price: " + d.getPrice() + "\n";
         }
 
-        System.out.println(stock);
+        return stock;
     }
 }
