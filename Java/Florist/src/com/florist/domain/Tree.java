@@ -15,6 +15,13 @@ public class Tree extends Product {
         return price;
     }
 
+    @Override
+    public void settPrice(double price) {
+        if (price > 0) {
+            this.price = price;
+        }
+    }
+
     public int getHeight() {
         return height;
     }

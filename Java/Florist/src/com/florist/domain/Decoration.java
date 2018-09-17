@@ -15,6 +15,13 @@ public class Decoration extends Product {
         return price;
     }
 
+    @Override
+    public void settPrice(double price) {
+        if (price > 0) {
+            this.price = price;
+        }
+    }
+
     public Material getMaterial() {
         return material;
     }

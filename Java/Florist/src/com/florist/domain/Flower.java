@@ -15,6 +15,13 @@ public class Flower extends Product {
         return price;
     }
 
+    @Override
+    public void settPrice(double price) {
+        if (price > 0) {
+            this.price = price;
+        }
+    }
+
     public String getColor() {
         return color;
     }
