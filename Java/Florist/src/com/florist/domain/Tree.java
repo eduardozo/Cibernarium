@@ -1,16 +1,21 @@
 package com.florist.domain;
 
-public class Tree extends Florist {
+public class Tree extends Product {
 
-    private String height;
-    private double price = 15;
+    private int height;
+    private double price;
+
+    public Tree(int height, double price) {
+        this.height = height;
+        this.price = price;
+    }
 
     @Override
     public double getPrice() {
         return price;
     }
 
-    public String getHeight() {
+    public int getHeight() {
         return height;
     }
 }

@@ -1,28 +1,45 @@
 package com.florist.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Florist {
+public class Florist {
 
     private String name;
-    private List<Tree> trees;
-    private List<Flower> flowers;
-    private List<Decoration> decorations;
+    private List<Tree> trees = new ArrayList<>();
+    private List<Flower> flowers = new ArrayList<>();
+    private List<Decoration> decorations = new ArrayList<>();
 
-
-    public abstract double getPrice();
-
-    public void addTree() {
-
+    public Florist(String name) throws Exception {
+        if (name.equals("")) throw new Exception();
+        this.name = name;
     }
 
-    public void addFlower() {
-
+    public void addTree(int height, double price) {
+        trees.add(new Tree(height, price));
     }
 
-    public void addDecoration() {
-
+    public void addFlower(String color, double price) {
+        flowers.add(new Flower(color, price));
     }
 
+    public void addDecoration(Material material, double price) {
+        decorations.add(new Decoration(material, price));
+    }
 
+    public List<Tree> getTrees() {
+        return trees;
+    }
+
+    public List<Flower> getFlowers() {
+        return flowers;
+    }
+
+    public List<Decoration> getDecorations() {
+        return decorations;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
