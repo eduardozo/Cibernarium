@@ -1,6 +1,7 @@
 package com.java.example;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -18,6 +19,18 @@ public class Main {
 
         states.addFirst("Montana");
         System.out.println(states);
+        System.out.println("Last state in my list is: " + states.getLast());
+
+        ListIterator iterator = states.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("----------------------------");
+
+        while (iterator.hasPrevious()) {
+            System.out.println(iterator.previous());
+        }
 
     }
 }
