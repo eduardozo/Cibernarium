@@ -1,6 +1,6 @@
 package com.java.example;
 
-import java.util.ArrayList;
+import java.util.Vector;
 
 public class Main {
 
@@ -12,6 +12,11 @@ public class Main {
         VideoGame game2 = new VideoGame("Pokemon Sun", 2016, "E", platform2);
         VideoGame game3 = new VideoGame("The Legend of Zelda", 2017, "E", platform2);
 
+        Vector<VideoGame> games = new Vector<>();
+        games.add(game1);
+        games.add(game2);
+        games.add(game3);
+        System.out.println(games);
 
     }
 }
