@@ -1,5 +1,7 @@
 package com.java.example;
 
+import java.util.Arrays;
+
 public class VideoGame {
 
     private String title;
@@ -47,5 +49,15 @@ public class VideoGame {
 
     public void setPlatforms(String[] platforms) {
         this.platforms = platforms;
+    }
+
+    @Override
+    public String toString() {
+        return "[" +
+                "\ntitle='" + title + '\'' +
+                ", \nyear=" + year +
+                ", \nrating='" + rating + '\'' +
+                ", \nplatforms=" + Arrays.toString(platforms) +
+                ']';
     }
 }
