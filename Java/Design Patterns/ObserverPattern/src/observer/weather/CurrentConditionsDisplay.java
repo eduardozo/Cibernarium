@@ -3,7 +3,7 @@ package observer.weather;
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
     private float temperature;
-    private float humedity;
+    private float humidity;
     private Subject weatherData;
 
     public CurrentConditionsDisplay(Subject weatherData) {
@@ -12,14 +12,14 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temp, float humedity, float pressure) {
+    public void update(float temp, float humidity, float pressure) {
         this.temperature = temp;
-        this.humedity = humedity;
+        this.humidity = humidity;
         display();
     }
 
     @Override
     public void display() {
-        System.out.println("Current conditions: " + temperature + "Fº and " + humedity + "% humidity");
+        System.out.println("Current conditions: " + temperature + "F° and " + humidity + "% humidity");
     }
 }

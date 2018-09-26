@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class WeatherData implements Subject {
 
     private ArrayList<Observer> observers;
-    private float tempeture;
-    private float humedity;
+    private float temperature;
+    private float humidity;
     private float pressure;
 
     public WeatherData() {
-        observers = new ArrayList<Observer>();
+        observers = new ArrayList<>();
     }
 
     @Override
@@ -29,8 +29,8 @@ public class WeatherData implements Subject {
     @Override
     public void notifyObservers() {
         for (int i = 0; i < observers.size(); i++) {
-            Observer observer = observers.get(i); //todo casting
-            observer.update(tempeture, humedity, pressure);
+            Observer observer = observers.get(i);
+            observer.update(temperature, humidity, pressure);
         }
     }
 
@@ -38,19 +38,19 @@ public class WeatherData implements Subject {
         notifyObservers();
     }
 
-    public void setMeasurements(float tempeture, float humedity, float pressure) {
-        this.tempeture = tempeture;
-        this.humedity = humedity;
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
         this.pressure = pressure;
         measurementsChanged();
     }
 
-    public float getTempeture() {
-        return tempeture;
+    public float getTemperature() {
+        return temperature;
     }
 
-    public float getHumedity() {
-        return humedity;
+    public float getHumidity() {
+        return humidity;
     }
 
     public float getPressure() {
