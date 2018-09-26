@@ -1,7 +1,5 @@
 package observer.weather;
 
-import observer.HeatIndexDisplay;
-
 public class WeatherStation {
 
     public static void main(String[] args) {
