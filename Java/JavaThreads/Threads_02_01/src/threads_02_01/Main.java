@@ -9,7 +9,7 @@ public class Main {
         Runnable r1 = () -> {
             if (a == 10) {
                 try {
-                    Thread.sleep(0);
+                    Thread.sleep(0); //if sleep(500) or more, b never be 5
                     b = a / 2.0;
                     System.out.println(Thread.currentThread().getName() + ": b = " + b);
 
