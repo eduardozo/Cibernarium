@@ -7,7 +7,9 @@ public class Main {
         Countdown CD = new Countdown();
 
         Runnable r = () -> {
-            CD.printCount();
+            synchronized (CD) {
+                CD.printCount();
+            }
         };
 
         Thread one = new Thread(r, "One");
