@@ -9,11 +9,20 @@ public class Main {
 
         print(ints);
         print(days);
-
+        System.out.println(countGreaterThan(ints, 50));
 
     }
 
+    public static <T extends Comparable<T>> int countGreaterThan(T[] elements, T element) {
+        int counter = 0;
+        for (T e : elements) {
+            if (e.compareTo(element) > 0) {
+                counter++;
+            }
+        }
 
+        return counter;
+    }
 
     public static <E> void print(E[] list) {
         for (E element : list) {
