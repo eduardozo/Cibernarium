@@ -9,6 +9,8 @@ public class Main {
         Comparable c = new Date();
         System.out.println(c.compareTo("Monday"));
 
-
+        //Generics show errors at compile time
+        Comparable<Date> c2 = new Date();
+        System.out.println(c2.compareTo("Monday"));
     }
 }
