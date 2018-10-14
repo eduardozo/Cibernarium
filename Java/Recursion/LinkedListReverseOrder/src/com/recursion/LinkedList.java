@@ -14,18 +14,14 @@ public class LinkedList {
         node3.next = null;
         
         printList(node1);
-
-        node3.next = node2;
-        node2.next = node1;
-        node1.next = head;
-        printListReverse(node3);
+        printListReverse(node1);
 
     }
 
     private static void printListReverse(Node n) {
-        if (n.value != 0) {
-            System.out.print(n.value + " ");
+        if (n != null) {
             printListReverse(n.next);
+            System.out.print(n.value + " ");
         }
     }
 
