@@ -10,4 +10,6 @@ public interface IApplicationDAO {
     boolean applicationExists(String name, String owner);
 
     Application getApplicationById(int applicationId);
+
+    void updateApplication(Application application);
 }

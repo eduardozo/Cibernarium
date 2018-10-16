@@ -33,5 +33,11 @@ public class TrackzillaController {
         return new ResponseEntity<Application>(app, HttpStatus.OK);
 
     }
+
+    @PutMapping("/application")
+    public ResponseEntity<Application> updateApplication(@RequestBody Application application) {
+        applicationService.updateApplication(application);
+        return new ResponseEntity<Application>(application, HttpStatus.OK);
+    }
 }
 

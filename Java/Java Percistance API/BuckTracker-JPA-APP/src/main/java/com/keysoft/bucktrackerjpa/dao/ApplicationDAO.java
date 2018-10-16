@@ -35,4 +35,14 @@ public class ApplicationDAO implements IApplicationDAO {
         return entityManager.find(Application.class, applicationId);
     }
 
+    @Override
+    public void updateApplication(Application application) {
+        //TODO provide implementation for updating an existing application
+        Application app = getApplicationById(application.getId());
+        app.setName(application.getName());
+        app.setDescription(application.getDescription());
+        app.setOwner(application.getOwner());
+        entityManager.flush();
+    }
+
 }

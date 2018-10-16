@@ -27,4 +27,9 @@ public class ApplicationService implements IApplicationService {
     public Application getApplicationById(int applicationId) {
         return applicationDAO.getApplicationById(applicationId);
     }
+
+    @Override
+    public void updateApplication(Application application) {
+        applicationDAO.updateApplication(application);
+    }
 }
