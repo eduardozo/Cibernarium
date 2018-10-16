@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Application {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "application_id")
     private Integer id;
 
