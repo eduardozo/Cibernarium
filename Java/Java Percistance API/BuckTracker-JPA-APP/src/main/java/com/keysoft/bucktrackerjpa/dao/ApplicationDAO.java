@@ -18,7 +18,7 @@ public class ApplicationDAO implements IApplicationDAO {
     @Override
     public void addApplication(Application application) {
         //TODO - implement creating a new application using the entityManager
-
+        entityManager.persist(application);
     }
 
     @Override
