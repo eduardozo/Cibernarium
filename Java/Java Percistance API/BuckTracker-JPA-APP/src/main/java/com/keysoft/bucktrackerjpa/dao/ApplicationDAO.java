@@ -29,4 +29,10 @@ public class ApplicationDAO implements IApplicationDAO {
         return count > 0;
     }
 
+    @Override
+    public Application getApplicationById(int applicationId) {
+        //TODO implement finding a specific application
+        return entityManager.find(Application.class, applicationId);
+    }
+
 }
