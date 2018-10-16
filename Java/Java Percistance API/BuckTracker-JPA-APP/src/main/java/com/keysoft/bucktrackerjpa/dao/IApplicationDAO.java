@@ -12,4 +12,6 @@ public interface IApplicationDAO {
     Application getApplicationById(int applicationId);
 
     void updateApplication(Application application);
+
+    void deleteApplication(int applicationId);
 }

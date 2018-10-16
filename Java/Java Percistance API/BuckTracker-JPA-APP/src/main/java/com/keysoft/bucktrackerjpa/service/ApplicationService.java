@@ -32,4 +32,9 @@ public class ApplicationService implements IApplicationService {
     public void updateApplication(Application application) {
         applicationDAO.updateApplication(application);
     }
+
+    @Override
+    public void deleteApplication(int applicationId) {
+        applicationDAO.deleteApplication(applicationId);
+    }
 }

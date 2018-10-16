@@ -45,4 +45,10 @@ public class ApplicationDAO implements IApplicationDAO {
         entityManager.flush();
     }
 
+    @Override
+    public void deleteApplication(int applicationId) {
+        //TODO implement deleting an application using the EntityManager
+        entityManager.remove(getApplicationById(applicationId));
+    }
+
 }

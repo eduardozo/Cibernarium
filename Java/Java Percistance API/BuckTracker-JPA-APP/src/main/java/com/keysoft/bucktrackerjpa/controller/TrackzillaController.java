@@ -39,5 +39,11 @@ public class TrackzillaController {
         applicationService.updateApplication(application);
         return new ResponseEntity<Application>(application, HttpStatus.OK);
     }
+
+    @DeleteMapping("/application/{id}")
+    public ResponseEntity<Void> deleteApplication(@PathVariable("id") Integer id) {
+        applicationService.deleteApplication(id);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
 }
 
