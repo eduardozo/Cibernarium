@@ -1,11 +1,9 @@
 package com.test.dao;
 
 import com.test.beans.Product;
+import com.test.beans.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +32,30 @@ public class ApplicationDao {
         }
 
         return products;
+    }
+
+    public int registerUser(User user) {
+        int rowsAffected = 0;
+        try {
+            // get the connection for the database
+            Connection connection = DBConnection.getConnectionToDatabase();
+
+            // write the insert query
+            String insertQuery = "INSERT INTO users VALUES(?,?,?,?,?,?)";
+            // set parameters with PreparedStatement
+            PreparedStatement statement = connection.prepareStatement(insertQuery);
+            statement.setString(1, user.getUsername());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getFirstName());
+            statement.setString(4, user.getLastName());
+            statement.setInt(5, user.getAge());
+            statement.setString(6, user.getActivity());
+            // execute the statement
+            rowsAffected = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rowsAffected;
     }
 }
